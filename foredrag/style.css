@@ -1,0 +1,11 @@
+﻿body
+{
+    font-family:Verdana;
+}
+.code
+{
+    border:solid 1px #000000;
+    background-color:#EEEEEE;
+    padding:5px;
+    font-family:Courier New;
+}

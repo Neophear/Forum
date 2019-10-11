@@ -1,0 +1,56 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>Forum</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <div id="top"></div>
+        <br />
+        <form id="form1" runat="server">
+            <center>
+                <table width="80%" cellspacing="0" cellpadding="10" border="0">
+                    <tr>
+                        <td class="bodyline">
+                            <table style="background-color:#7A9ADE" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td style="<%= "width:100%;background-image:url('" + this.ResolveClientUrl("~/images/top2.jpg") + "');" %>" align="left">
+                                        <asp:Image ID="Image1" ImageUrl="~/images/top.jpg" runat="server" AlternateText="Logo" />
+                                    </td>
+                                    <td style="width:100%;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height:23px;vertical-align:middle;" class="nav1" align="center">
+                                        <asp:Menu CssClass="nav_top" ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" Font-Bold="True" ForeColor="#FFFFFF">
+                                            <StaticItemTemplate>
+                                                <%# "&nbsp;&nbsp;&nbsp;" + Eval("Text") + "&nbsp;&nbsp;&nbsp;"%>
+                                            </StaticItemTemplate>
+                                        </asp:Menu>
+                                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <br />
+                            <span class="gensmall"></span>
+                            <table style="text-align:center;" width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+                                <tr>
+                                    <td style="height:28px" align="right" class="copyright">
+                                        Powered by <a href="http://www.phpbb.com/">phpBB</a> © 2001, 2005 phpBB Group
+                                        <br />
+                                        Terayon v2.02 Theme created by <a href="http://www.systemcorp.net/">lithosphere&nbsp;</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br />&nbsp;
+            </center>
+        </form>
+    </body>
+</html>
